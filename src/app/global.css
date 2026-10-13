@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg:        #F4F5F3;   /* Pale Stone */
+    --sidebar:   #202D39;   /* Deep Ink Blue */
+    --card:      #FFFFFF;   /* Pure White */
+    --border:    #E2E7E5;   /* Soft Gray */
+    --text:      #25313C;   /* Charcoal */
+    --muted:     #74808B;   /* Slate Gray */
+    --gold:      #C4654A;   /* Terracotta accent */
+    --terra:     #C4654A;
+    --teal:      #327C79;   /* Himalayan Teal */
+    --teal-dark: #25615F;   /* Deep Teal */
+    --mist:      #E6F1EE;   /* Mist Teal */
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: "Inter", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.28);
+  }
+}
+
+@layer components {
+  .admin-card {
+    @apply rounded-xl border bg-admin-card;
+    border-color: var(--border);
+  }
+
+  .admin-input {
+    @apply w-full rounded-lg px-3 py-2 text-sm font-sans outline-none transition-colors;
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  .admin-input:focus {
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(50, 124, 121, 0.12);
+  }
+  .admin-input::placeholder {
+    color: var(--muted);
+  }
+
+  .admin-btn-primary {
+    @apply inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition-all duration-200;
+    background: var(--teal);
+    color: #fff;
+  }
+  .admin-btn-primary:hover {
+    background: var(--teal-dark);
+  }
+
+  .admin-btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200;
+    color: var(--muted);
+    background: transparent;
+  }
+  .admin-btn-ghost:hover {
+    background: var(--mist);
+    color: var(--text);
+  }
+
+  .admin-label {
+    @apply block text-xs font-semibold uppercase tracking-wider mb-1.5;
+    color: var(--muted);
+  }
+}
