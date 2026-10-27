@@ -50,12 +50,13 @@ The admin-facing control panel of **HomeStay Nepal**. Manage homestay inventory,
 - **CRUD** — create, edit, and delete village knowledge entries
 - **Tagging** — category tags used for retrieval
 
-### Platform
+### Platform & Security
 
-- **JWT admin auth** — separate token store from the traveler app
-- **Auto token refresh** — silent retry on `401`
-- **Reusable data table** — shared table primitive across all listings
-- **Confirmation modals** — consistent guard before destructive actions
+- **JWT admin auth** — role-guarded login restricted to `ADMIN` users
+- **Password visibility toggle** — eye / eye-off toggle icon on admin login form
+- **Auto token refresh** — silent retry on `401` with interceptors
+- **Reusable data table** — shared table primitive across all listings with sorting/pagination
+- **Confirmation modals** — consistent guard before destructive actions (delete stay, guide, review)
 
 ---
 
@@ -73,8 +74,8 @@ The admin-facing control panel of **HomeStay Nepal**. Manage homestay inventory,
 | React Hook Form    | Forms         | Listing and guide forms                   |
 | Zod                | Validation    | Client-side form schemas                  |
 | React Hot Toast    | Notifications | Toasts                                    |
-| lucide-react       | Icons         | Icon set                                  |
-| cn                 | Utility       | Tailwind class merging                    |
+| Heroicons / SVGs   | Icons         | Inline accessible SVGs                    |
+| clsx + twMerge     | Utility       | Tailwind class merging                    |
 
 ---
 
@@ -251,7 +252,3 @@ Contributions are welcome! Please open an issue or submit a pull request with a 
 ## 📄 License
 
 This project is licensed under the MIT license.
-
----
-
-Made with ❤️ by Bikram Luhar
